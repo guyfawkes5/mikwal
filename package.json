@@ -2,7 +2,7 @@
   "name": "guyfawkes5.github.io",
   "version": "0.0.1",
   "description": "Publicly hosted JavaScript app.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/guyfawkes5/guyfawkes5.github.io/issues"
   },
-  "homepage": "https://github.com/guyfawkes5/guyfawkes5.github.io#readme"
+  "homepage": "https://github.com/guyfawkes5/guyfawkes5.github.io#readme",
+  "devDependencies": {
+    "webpack": "^3.8.1"
+  }
 }
