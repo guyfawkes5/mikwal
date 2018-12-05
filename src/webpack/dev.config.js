@@ -1,29 +1,36 @@
 const SRC = __dirname + "/..",
-    DIST = SRC + "/../docs",
+    DIST = __dirname + "/../../docs",
     
-    HtmlWebpackPlugin = require('html-webpack-plugin');
+    HtmlWebpackPlugin = require("html-webpack-plugin"),
+    CopyWebpackPlugin = require("copy-webpack-plugin");
+
 
 module.exports = {
-    entry: SRC + "/index.tsx",
+    entry: SRC + "/index.jsx",
     output: {
         filename: "bundle.js",
         path: DIST
     },
+    mode: "development",
 
     devtool: "source-map",
 
     resolve: {
-        extensions: [".ts", ".tsx", ".js", ".json"]
+        extensions: [".js", ".jsx", ".json"]
     },
 
     module: {
         rules: [{
-            test: /\.tsx?$/,
-            loader: "awesome-typescript-loader"
+            test: /.jsx?$/,
+            loader: "babel-loader",
+            exclude: /node_modules/,
+            query: {
+                presets: ["@babel/preset-env", "@babel/preset-react"],
+                plugins: ["@babel/plugin-proposal-class-properties"]
+            }
         }, {
-            enforce: "pre",
-            test: /\.js$/,
-            loader: "source-map-loader"
+            test: /\.scss$/,
+            use: ["style-loader", "css-loader", "sass-loader"]
         }]
     },
 
@@ -31,6 +38,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             inject: true,
             template: SRC + "/assets/index.html"
-        })
+        }),
+        new CopyWebpackPlugin([{
+            from: './src/assets/favicon.ico'
+        }])
     ]
 };

@@ -19,15 +19,26 @@
   },
   "homepage": "https://github.com/guyfawkes5/mikwal#readme",
   "devDependencies": {
-    "@types/react": "^16.0.16",
-    "@types/react-dom": "^16.0.2",
-    "awesome-typescript-loader": "^3.2.3",
-    "html-webpack-plugin": "^2.30.1",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "source-map-loader": "^0.2.2",
-    "typescript": "^2.5.3",
-    "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.3"
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.2.1",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.27.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.6.1",
+    "@material-ui/icons": "^3.0.1",
+    "classnames": "^2.2.6",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
   }
 }
