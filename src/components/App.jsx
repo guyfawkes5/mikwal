@@ -10,12 +10,12 @@ import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import blue from '@material-ui/core/colors/orange';
+import orange from '@material-ui/core/colors/orange';
 
 const theme = createMuiTheme({
     palette: {
-        primary: blue,
-    },
+        primary: orange
+    }
 });
 
 import './App.scss';
