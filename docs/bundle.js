@@ -21172,7 +21172,7 @@ module.exports = function() {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(4);
-exports.Hello = function (props) { return React.createElement("h1", null,
+exports.App = function (props) { return React.createElement("h1", null,
     "Hello from ",
     props.compiler,
     " and ",

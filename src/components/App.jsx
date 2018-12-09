@@ -11,10 +11,17 @@ import Divider from '@material-ui/core/Divider';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import orange from '@material-ui/core/colors/orange';
+import cyan from '@material-ui/core/colors/lightBlue';
+
+import ChartContainer from './ChartContainer';
 
 const theme = createMuiTheme({
+    typography: {
+        useNextVariants: true
+    },
     palette: {
-        primary: orange
+        primary: orange,
+        secondary: cyan
     }
 });
 
@@ -22,7 +29,7 @@ import './App.scss';
 
 class App extends React.Component {
     state = {
-        open: true
+        open: false
     };
 
     constructor(props) {
@@ -55,6 +62,7 @@ class App extends React.Component {
                 <Drawer variant="permanent"
                         anchor="left"
                         open={this.state.open}
+                        className="fill-height"
                         classes={{ paper: classNames('controller-drawer', !this.state.open && 'controller-drawer-closed') }}
                         onClick={this.closeDrawer}>
                     <div>
@@ -65,6 +73,9 @@ class App extends React.Component {
                     <Divider />
                     <h1>Hi!</h1>
                 </Drawer>
+                <div className="fill-block filled-from-top-bar">
+                    <ChartContainer />
+                </div>
             </MuiThemeProvider>
         );
     }

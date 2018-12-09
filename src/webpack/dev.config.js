@@ -31,6 +31,9 @@ module.exports = {
         }, {
             test: /\.scss$/,
             use: ["style-loader", "css-loader", "sass-loader"]
+        }, {
+            test: /\.STL$/,
+            loader: 'file-loader'
         }]
     },
 
@@ -41,6 +44,10 @@ module.exports = {
         }),
         new CopyWebpackPlugin([{
             from: './src/assets/favicon.ico'
+        }, {
+            from: './src/assets/ireland.json'
+        }, {
+            from: './src/assets/export.png'
         }])
     ]
 };
